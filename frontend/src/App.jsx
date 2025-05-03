@@ -1,12 +1,16 @@
 import { useState } from 'react'
+import { Dashboard } from './pages/Dashboard'
+import { TripDetail } from './pages/TripDetail'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Travel Buddy</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/detail" element={<TripDetail />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
