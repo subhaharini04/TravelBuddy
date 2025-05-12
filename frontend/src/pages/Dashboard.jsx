@@ -45,16 +45,11 @@ export const Dashboard = () => {
       className="min-w-full min-h-screen bg-cover bg-center flex items-center justify-center overflow-hidden"
       style={{ backgroundImage: `url(${cloud})` }}
     >
-      <img
-        src="flag1.png"
-        alt="flag"
-        className="absolute top-[10%] left-[20%] w-10 h-10 rounded-full animate-float"
-      />
-      <img
-        src="flag1.png"
-        alt="flag"
-        className="absolute top-[10%] left-[30%] w-10 h-10 rounded-full animate-float"
-      />
+      <div className="flag-container">
+        <img src="flag1.png" alt="flag" className="flag flag1" />
+        <img src="flag2.png" alt="flag" className="flag flag2" />
+        <img src="flag3.png" alt="flag" className="flag flag3" />
+      </div>
 
       <div className="text-center max-w-screen-sm  px-4">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
