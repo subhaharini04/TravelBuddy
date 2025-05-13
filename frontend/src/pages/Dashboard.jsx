@@ -3,18 +3,16 @@ import cloud from '../assets/cloud.jpeg'
 import plane from '../assets/plane.png'
 import dayjs from 'dayjs';
 import travel from '../assets/travel.png'
-import { FaCalendarAlt, FaPlane } from 'react-icons/fa';
+import Flag from '../components/Flag'; // adjust path if needed
 
 export const Dashboard = () => {
   const [open, setOpen] = useState(false)
   const [startDate, setStartDate] = useState(dayjs().format('YYYY-MM-DD'));
   const [endDate, setEndDate] = useState(dayjs().add(1, 'day').format('YYYY-MM-DD'));
-  // Set minimum date to today
   const today = dayjs().format('YYYY-MM-DD');
 
   const handleStartDateChange = (e) => {
     const selectedDate = e.target.value;
-    // Reset end date if it's before new start date
     if (endDate && dayjs(endDate).isBefore(selectedDate)) {
       setEndDate('');
     }
@@ -45,10 +43,14 @@ export const Dashboard = () => {
       className="min-w-full min-h-screen bg-cover bg-center flex items-center justify-center overflow-hidden"
       style={{ backgroundImage: `url(${cloud})` }}
     >
-      <div className="flag-container">
-        <img src="flag1.png" alt="flag" className="flag flag1" />
-        <img src="flag2.png" alt="flag" className="flag flag2" />
-        <img src="flag3.png" alt="flag" className="flag flag3" />
+      <div className="sm:hidden hidden absolute top-10 left-20 animate-float">
+        <Flag />
+      </div>
+      <div className="absolute top-1/3 left-2/3 animate-float" style={{ animationDelay: '2s' }}>
+        <Flag />
+      </div>
+      <div className="absolute top-3/4 left-1/3 animate-float" style={{ animationDelay: '4s' }}>
+        <Flag />
       </div>
 
       <div className="text-center max-w-screen-sm  px-4">

@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;  
+
 
 body, html {
   margin: 0;
@@ -40,6 +38,9 @@ body, html {
   100% { transform: translateY(0); }
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
